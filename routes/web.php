@@ -39,6 +39,7 @@ Route::post('login' , 'AuthenticationController@login')->name('login');
 Route::group(['middleware'=>'Admin'],function(){
     Route::prefix('admin')->group(function() {
         Route::get('user' , 'AdminController@userIndex')->name('admin.user');
-
+        Route::post('user/delete' , 'UserController@deleteUser');
+        Route::get('blog/user/{id}' , 'AdminController@userBlog')->name('user.blog');
     });
 });
