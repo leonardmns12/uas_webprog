@@ -38,11 +38,15 @@ class BlogController extends Controller
     }
     public function fullstory($id) {
         $article = Article::find($id);
-        return view('blog.fullstory' , ['article' => $article]);
+        return view('blog.fullstory' , ['article' => $article] , ['category' => Category::all()]);
     }
     public function delete(Request $request) {
         $article = Article::find($request->id);
         $article->delete();
         return redirect()->back();
+    }
+    public function filter($id) {
+        $article = Article::where('category_id' , $id)->get();
+        return view('filter' , ['category' => Category::all() , 'article' => $article]);
     }
 }

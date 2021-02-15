@@ -1,12 +1,7 @@
-@extends('layout')
+@extends('layout' , ['category' => $category])
 
 @section('content')
-    <div class="bg-white m-3">
-    @auth
-    Welcome {{Auth::user()->name}} 
-    @endauth
-
-    <div class="container py-3">
+<div class="container py-3">
         <div class="row">
             @foreach($article as $articles)
             <div class="col-md-4 mb-3" style="">
@@ -30,5 +25,4 @@
             @endforeach
         </div>
     </div>   
-    </div>
 @endsection

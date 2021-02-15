@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout' , ['category' => $category])
 
 <style> 
      .login {
@@ -37,7 +37,7 @@
             <span class="text-danger mb-3">{{$errors->first('password')}}</span>
             <br/>
         @endif
-        <div style="display:relative">
+        <div style="display:relative" class="mt-3">
             <button type="submit" class="btn border">Submit</button>
         </div>
         @if(Session::has('invalid'))

@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('admin')
 
 
 @section('content')
@@ -14,7 +14,7 @@
 				<tbody>
 					@foreach($article as $articles)
 						<tr>
-        					<td><a href="#">{{$articles->title}}</a></td>
+        					<td><a href="{{route('blog.fullstory',['id' => $articles->id])}}">{{$articles->title}}</a></td>
         					<td>
         						<form method="POST" action="blog/delete">
         						@csrf

@@ -54,8 +54,13 @@
                 <button type="submit" class="btn border">Submit</button>
             </div>
             @if(Session::has('success'))
-            <div>
+            <div class="text-success">
                 {{Session::get('success')}}
+            </div>
+            @endif
+            @if(Session::has('error'))
+            <div class="text-danger">
+                {{Session::get('error')}}
             </div>
             @endif
         </form>

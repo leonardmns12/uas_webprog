@@ -19,33 +19,32 @@
         <li class="nav-item">
             <a href="{{route('home')}}" class="text-white nav-link">Home</a>
         </li>
-        <li class="nav-item d-flex align-items-center justify-content-center">
-        <div class="dropdown">
-        <a class="text-white text-decoration-none dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Category
+        <li class="nav-item">
+        <div class="dropdown nav-link ">
+        <a class="text-white dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" href="#">
+        Category
         </a>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          @foreach($category as $categories)
-          <a class="dropdown-item" href="{{route('blog.filter' , ['id' => $categories->id])}}">{{$categories->name}}</a>
-          @endforeach
-        </div>
-      </div>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="#">About us</a>
         </li>
         @else
         <li class="nav-item">
-            <a href="{{route('home')}}" class="text-white nav-link">Home</a>
+            <a href="{{route('admin')}}" class="text-white nav-link">Home</a>
         </li>
         <li class="nav-item">
         <div class="dropdown nav-link ">
-        <a class="text-white text-decoration-none" aria-expanded="false" href="{{route('user.profile')}}">
-        Profile
+        <a class="text-white text-decoration-none" aria-expanded="false" href="{{route('admin.blog')}}">
+        Admin
         </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="{{route('blog.view')}}">Blog</a>
+          <a class="nav-link text-white" href="{{route('admin.user')}}">User</a>
         </li>
         @endguest
       </ul>

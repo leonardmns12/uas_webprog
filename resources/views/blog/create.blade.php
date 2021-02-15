@@ -27,6 +27,10 @@
                     <input type="file" name="image" class="custom-file-input" id="inputGroupFile02">
                     <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
                 </div>
+                @if($errors->any('image'))
+                    <br/>
+                    <span class="text-danger">{{$errors->first('image')}}</span>
+                @endif
                 </div>
 
                 <label style="font-weight:bold;">Story:</label>
